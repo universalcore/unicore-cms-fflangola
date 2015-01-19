@@ -3,5 +3,6 @@ pytest
 pytest-cov
 pep8
 pyflakes
+mock
 -e .
 
