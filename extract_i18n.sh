@@ -1,19 +1,19 @@
 #!/bin/bash
 find . -name '*.mo' -delete
-mkdir -p unicorecmsskeleton/locale
+mkdir -p unicorecmsfflangola/locale
 
-pot-create -o unicorecmsskeleton/locale/unicorecmsskeleton.pot unicorecmsskeleton/
+pot-create -o unicorecmsfflangola/locale/unicorecmsfflangola.pot unicorecmsfflangola/
 
 declare -a arr=("eng_GB")
 
 for lang in "${arr[@]}"
 do
-    mkdir -p "unicorecmsskeleton/locale/""$lang""/LC_MESSAGES"
+    mkdir -p "unicorecmsfflangola/locale/""$lang""/LC_MESSAGES"
 
-    if [ ! -f "unicorecmsskeleton/locale/""$lang""/LC_MESSAGES/unicorecmsskeleton.po" ]; then
-        msginit -l $lang -i unicorecmsskeleton/locale/unicorecmsskeleton.pot -o unicorecmsskeleton/locale/$lang/LC_MESSAGES/unicorecmsskeleton.po
+    if [ ! -f "unicorecmsfflangola/locale/""$lang""/LC_MESSAGES/unicorecmsfflangola.po" ]; then
+        msginit -l $lang -i unicorecmsfflangola/locale/unicorecmsfflangola.pot -o unicorecmsfflangola/locale/$lang/LC_MESSAGES/unicorecmsfflangola.po
     fi
 
-    msgmerge --update unicorecmsskeleton/locale/$lang/LC_MESSAGES/unicorecmsskeleton.po unicorecmsskeleton/locale/unicorecmsskeleton.pot
-    msgfmt unicorecmsskeleton/locale/$lang/LC_MESSAGES/*.po -o unicorecmsskeleton/locale/$lang/LC_MESSAGES/unicorecmsskeleton.mo
+    msgmerge --update unicorecmsfflangola/locale/$lang/LC_MESSAGES/unicorecmsfflangola.po unicorecmsfflangola/locale/unicorecmsfflangola.pot
+    msgfmt unicorecmsfflangola/locale/$lang/LC_MESSAGES/*.po -o unicorecmsfflangola/locale/$lang/LC_MESSAGES/unicorecmsfflangola.mo
 done
