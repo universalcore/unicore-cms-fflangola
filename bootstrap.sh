@@ -6,7 +6,7 @@ virtualenv ve
 source ve/bin/activate
 git pull
 pip install -e .
-pip install --upgrade elastic-git
+#pip install --upgrade elastic-git
 echo 'Done installing requirements.'
 echo 'Cloning repo..'
 rm -rf repo/

@@ -5,40 +5,48 @@
 
         <div tal:define="localisation view.get_localisation()" tal:omit-tag="">
             <div id="banner">
-                <a href="/declaration/">
-                    <condition tal:omit-tag="" tal:condition="localisation and localisation.image_host and localisation.image">
-                        <img alt="Welcome to the FFL Angola" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
-                    </condition>
-                    <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
-                        <img alt='Welcome to the FFL Angola' src="/static/img/000000.png" />
-                    </condition>
-                </a>
+                <condition tal:omit-tag="" tal:condition="localisation and localisation.image_host and localisation.image">
+                    <img alt="Malaria no More" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
+                </condition>
+                <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
+                    <img alt='Malaria no More' src="/static/img/000000.png" />
+                </condition>
             </div>
         </div>
 
-        <div class="articles latest" tal:condition="view.get_featured_pages()">
-            <div class="h1" i18n:translate="Latest">
-                Latest
-            </div>
-            <div class="listing no-pic" tal:repeat="page view.get_featured_pages()">
-                <div class="h2"><a href="/content/detail/${page.uuid}/">${page.title}</a></div>
-                <p>${page.description}</p>
-                <div class="clr"></div>
+
+
+        <div class="home-content" tal:condition="view.get_featured_pages()">
+            <div class="items">
+                <div class="box">
+                    <div class="item" tal:repeat="page view.get_featured_pages()">
+
+                        <div class="text">
+                            <a class="title" href="/content/detail/${page.uuid}/">${page.title}</a>
+                            <condition tal:omit-tag="" tal:condition="page.image_host and page.image">
+                                <img alt="${page.title}" src="${view.get_image_url(page.image_host, page.image, 45)}"/>
+                            </condition>
+                            <p> ${page.description}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="articles" tal:repeat="cat view.get_categories()">
-            <div class="h1">
-                <a href="/content/list/${cat.uuid}/">${cat.title}</a>
-            </div>
-            <div class="listing no-pic" tal:repeat="page view.get_featured_category_pages(cat.uuid)">
-                <div class="h2"><a href="/content/detail/${page.uuid}/">${page.title}</a></div>
-                <p>${page.description}</p>
-                <div class="clr"></div>
-            </div>
-            <div class="clr"></div>
-            <div class="pagination" tal:condition="view.get_featured_category_pages(cat.uuid)">
-                <a href="/content/list/${cat.uuid}/"><span i18n:translate="More">More</span> ${cat.title}</a>
+        <div class="home-content" tal:repeat="cat view.get_categories()[:20]">
+            <!-- <div class="h1">${cat.title}</div> -->
+            <div class="items" tal:condition="view.get_featured_category_pages(cat.uuid)">
+                <div class="box">
+                    <div class="item" tal:repeat="page view.get_featured_category_pages(cat.uuid)">
+                        <div class="text">
+                            <a class="title" href="/content/detail/${page.uuid}/">${page.title}</a>
+                            <condition tal:omit-tag="" tal:condition="page.image_host and page.image">
+                                <img alt="${page.title}" src="${view.get_image_url(page.image_host, page.image, 45)}"/>
+                            </condition>
+                            <p> ${page.description}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
