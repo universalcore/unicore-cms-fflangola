@@ -21,6 +21,13 @@
         <a href="/"><img src="${request.static_url('cms:static/img/logo.png')}?v=20141014" border="0" /></a>
     </div>
 
+    <div id="nav">
+        <a href="/" i18n:translate="Home">Home</a> |
+        <a href="/about/" i18n:translate="About">About</a> |
+        <a href="/credits/" i18n:translate="Credits">Credits</a> |
+        <a href="/contact/" i18n:translate="Contact">Contact</a>
+    </div>
+
     <div id="content">
 
         <div metal:define-slot="content">
