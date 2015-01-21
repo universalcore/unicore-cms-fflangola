@@ -51,7 +51,7 @@
 /*  MENU  */
 
     #menu { background: #009ee3; color: #fff; text-align: center; text-transform: uppercase;}
-        #menu a { padding: 15px; display: block; border-bottom: 2px solid #6cc9fd; text-align: left; color: #fff; }
+        #menu a { padding: 15px; display: block; border-top: 2px solid #6cc9fd; text-align: left; color: #fff; }
         #menu .item:last-child a { border-bottom: none; }
 
 /*  FOOTER  */
