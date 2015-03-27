@@ -4,7 +4,7 @@ mkdir -p unicorecmsfflangola/locale
 
 pot-create -o unicorecmsfflangola/locale/unicorecmsfflangola.pot unicorecmsfflangola/
 
-declare -a arr=("eng_GB")
+declare -a arr=("eng_GB" "por_PT")
 
 for lang in "${arr[@]}"
 do
