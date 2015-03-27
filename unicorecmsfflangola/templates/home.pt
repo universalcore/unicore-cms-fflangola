@@ -9,7 +9,7 @@
                     <img alt="Facts for Life" src="${view.get_image_url(localisation.image_host, localisation.image, 320)}"/>
                 </condition>
                 <condition tal:omit-tag="" tal:condition="not (localisation and localisation.image_host and localisation.image)">
-                    <img alt='Facts for Life' src="/static/img/000000.png" />
+                    <img alt='Facts for Life' src="/static/img/parents.jpg" />
                 </condition>
             </div>
         </div>
