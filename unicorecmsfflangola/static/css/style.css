@@ -70,6 +70,7 @@
             #content .box .item .text { margin: 0 0 0 0; }
         #content .intro { padding: 10px; background: #FACDD4; }
         #content .detail { padding: 0 10px; }
+            #content .detail p img{ width: 100%; }
         #content .pagination { padding: 10px 0; margin: 0 10px; border-top: 1px dotted #FACDD4; }
 
 /*  MENU  */
